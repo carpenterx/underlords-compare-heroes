@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underlords - Compare Heroes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-header">
+                
+                <div class="title">
+                    <!-- <h1 id="hero-name-1">Anti-Mage</h1> -->
+                    <select id="select-hero-1"></select>
+                    <h3 id="hero-tier-1">Tier 1</h3>
+                    <div class="synergies" id="synergies-1">
+                        <img src="images/synergies/Rogue.png" alt="Rogue">
+                        <img src="images/synergies/Hunter.png" alt="">
+                    </div>
+                </div>
+                
+                <div class="hero-icon" id="hero-icon-1">
+                    <img src="images/heroes/Anti-Mage_portrait_icon.png" alt="">
+                </div>
+
+                <h3 id="hero-tier-1-mobile">Tier 1</h3>
+            </div>
+
+            <div class="synergies-container">
+                <div class="synergies" id="synergies-1-mobile">
+                    <img src="images/synergies/Rogue.png" alt="Rogue">
+                    <img src="images/synergies/Hunter.png" alt="">
+                </div>
+                <div class="synergies" id="synergies-2-mobile">
+                    <img src="images/synergies/Rogue.png" alt="Rogue">
+                    <img src="images/synergies/Hunter.png" alt="">
+                    <img src="images/synergies/Hunter.png" alt="">
+                </div>
+            </div>
+
+            <div class="stats">
+                <p class="stats-header uppercase">Level</p>
+                <p class="stats-header center-text">1</p>
+                <p class="stats-header center-text">2</p>
+                <p class="stats-header center-text">3</p>
+
+                <p class="stats-header">Health</p>
+                <p id="health-1">750</p>
+                <p id="health-2">1500</p>
+                <p id="health-3">3000</p>
+
+                <p class="stats-header">Mana</p>
+                <p id="mana-1">0</p>
+                <p id="mana-2">0</p>
+                <p id="mana-3">0</p>
+
+                <p class="stats-header">DPS</p>
+                <p id="dps-1">42</p>
+                <p id="dps-2">83</p>
+                <p id="dps-3">167</p>
+
+                <p class="stats-header">Damage</p>
+                <p id="dmg-1">[45/55]</p>
+                <p id="dmg-2">[90/110]</p>
+                <p id="dmg-3">[180/220]</p>
+
+                <p class="stats-header">Attack Rate</p>
+                <p id="bar-1">0.83</p>
+                <p id="bar-2">0.83</p>
+                <p id="bar-3">0.83</p>
+
+                <p class="stats-header">Move Speed</p>
+                <p id="ms-1">310</p>
+                <p id="ms-2">310</p>
+                <p id="ms-3">310</p>
+
+                <p class="stats-header">Attack Range</p>
+                <p id="r-1">1</p>
+                <p id="r-2">1</p>
+                <p id="r-3">1</p>
+
+                <p class="stats-header">Magic Resist</p>
+                <p id="res-1">30</p>
+                <p id="res-2">40</p>
+                <p id="res-3">50</p>
+
+                <p class="stats-header">Armor</p>
+                <p id="a-1">5</p>
+                <p id="a-2">5</p>
+                <p id="a-3">5</p>
+            </div>
+        </div>
+        <p class="vs">VS</p>
+        <div class="hero">
+            <div class="hero-header-right">
+                <h3 id="hero-tier-2-mobile">Tier 2</h3>
+                <div class="hero-icon" id="hero-icon-2">
+                    <img src="images/heroes/Queen_of_Pain_portrait_icon.png" alt="">
+                </div>
+                <div class="mirror-title">
+                    <!-- <h1 id="hero-name-2">Queen of Pain</h1> -->
+                    <select id="select-hero-2"></select>
+                    <h3 id="hero-tier-2">Tier 2</h3>
+                    <div class="synergies" id="synergies-2">
+                        <img src="images/synergies/Demon.png" alt="">
+                        <img src="images/synergies/Assassin.png" alt="">
+                        <img src="images/synergies/Poisoner.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="stats">
+                <p class="stats-header uppercase">Level</p>
+                <p class="stats-header center-text">1</p>
+                <p class="stats-header center-text">2</p>
+                <p class="stats-header center-text">3</p>
+
+                <p class="stats-header">Health</p>
+                <p id="health-1-mirror">825</p>
+                <p id="health-2-mirror">1650</p>
+                <p id="health-3-mirror">3300</p>
+
+                <p class="stats-header">Mana</p>
+                <p id="mana-1-mirror">60</p>
+                <p id="mana-2-mirror">60</p>
+                <p id="mana-3-mirror">60</p>
+
+                <p class="stats-header">DPS</p>
+                <p id="dps-1-mirror">48</p>
+                <p id="dps-2-mirror">96</p>
+                <p id="dps-3-mirror">192</p>
+
+                <p class="stats-header">Damage</p>
+                <p id="dmg-1-mirror">[55/60]</p>
+                <p id="dmg-2-mirror">[110/120]</p>
+                <p id="dmg-3-mirror">[220/240]</p>
+
+                <p class="stats-header">Attack Rate</p>
+                <p id="bar-1-mirror">0.83</p>
+                <p id="bar-2-mirror">0.83</p>
+                <p id="bar-3-mirror">0.83</p>
+
+                <p class="stats-header">Move Speed</p>
+                <p id="ms-1-mirror">290</p>
+                <p id="ms-2-mirror">290</p>
+                <p id="ms-3-mirror">290</p>
+
+                <p class="stats-header">Attack Range</p>
+                <p id="r-1-mirror">3</p>
+                <p id="r-2-mirror">3</p>
+                <p id="r-3-mirror">3</p>
+
+                <p class="stats-header">Magic Resist</p>
+                <p id="res-1-mirror">0</p>
+                <p id="res-2-mirror">0</p>
+                <p id="res-3-mirror">0</p>
+
+                <p class="stats-header">Armor</p>
+                <p id="a-1-mirror">5</p>
+                <p id="a-2-mirror">5</p>
+                <p id="a-3-mirror">5</p>
+            </div>
+        </div>
+        <div class="mobile-stats">
+            <p class="stats-header uppercase">Level</p>
+            <p class="stats-header center-text double-colums">1</p>
+
+            <p class="stats-header">Health</p>
+            <p id="health-1-mobile">750</p>
+            <p id="health-1-mirror-mobile">1500</p>
+
+            <p class="stats-header">Mana</p>
+            <p id="mana-1-mobile">0</p>
+            <p id="mana-1-mirror-mobile">0</p>
+
+            <p class="stats-header">DPS</p>
+            <p id="dps-1-mobile">42</p>
+            <p id="dps-1-mirror-mobile">83</p>
+
+            <p class="stats-header">Damage</p>
+            <p id="dmg-1-mobile">[45/55]</p>
+            <p id="dmg-1-mirror-mobile">[90/110]</p>
+
+            <p class="stats-header">Attack Rate</p>
+            <p id="bar-1-mobile">0.83</p>
+            <p id="bar-1-mirror-mobile">0.83</p>
+
+            <p class="stats-header">Move Speed</p>
+            <p id="ms-1-mobile">310</p>
+            <p id="ms-1-mirror-mobile">310</p>
+
+            <p class="stats-header">Attack Range</p>
+            <p id="r-1-mobile">1</p>
+            <p id="r-1-mirror-mobile">1</p>
+
+            <p class="stats-header">Magic Resist</p>
+            <p id="res-1-mobile">30</p>
+            <p id="res-1-mirror-mobile">40</p>
+
+            <p class="stats-header">Armor</p>
+            <p id="a-1-mobile">5</p>
+            <p id="a-1-mirror-mobile">5</p>
+
+            <p class="stats-header uppercase">Level</p>
+            <p class="stats-header center-text double-colums">2</p>
+
+            <p class="stats-header">Health</p>
+            <p id="health-2-mobile">750</p>
+            <p id="health-2-mirror-mobile">1500</p>
+
+            <p class="stats-header">Mana</p>
+            <p id="mana-2-mobile">0</p>
+            <p id="mana-2-mirror-mobile">0</p>
+
+            <p class="stats-header">DPS</p>
+            <p id="dps-2-mobile">42</p>
+            <p id="dps-2-mirror-mobile">83</p>
+
+            <p class="stats-header">Damage</p>
+            <p id="dmg-2-mobile">[45/55]</p>
+            <p id="dmg-2-mirror-mobile">[90/110]</p>
+
+            <p class="stats-header">Attack Rate</p>
+            <p id="bar-2-mobile">0.83</p>
+            <p id="bar-2-mirror-mobile">0.83</p>
+
+            <p class="stats-header">Move Speed</p>
+            <p id="ms-2-mobile">310</p>
+            <p id="ms-2-mirror-mobile">310</p>
+
+            <p class="stats-header">Attack Range</p>
+            <p id="r-2-mobile">1</p>
+            <p id="r-2-mirror-mobile">1</p>
+
+            <p class="stats-header">Magic Resist</p>
+            <p id="res-2-mobile">30</p>
+            <p id="res-2-mirror-mobile">40</p>
+
+            <p class="stats-header">Armor</p>
+            <p id="a-2-mobile">5</p>
+            <p id="a-2-mirror-mobile">5</p>
+
+            <p class="stats-header uppercase">Level</p>
+            <p class="stats-header center-text double-colums">3</p>
+
+            <p class="stats-header">Health</p>
+            <p id="health-3-mobile">750</p>
+            <p id="health-3-mirror-mobile">1500</p>
+
+            <p class="stats-header">Mana</p>
+            <p id="mana-3-mobile">0</p>
+            <p id="mana-3-mirror-mobile">0</p>
+
+            <p class="stats-header">DPS</p>
+            <p id="dps-3-mobile">42</p>
+            <p id="dps-3-mirror-mobile">83</p>
+
+            <p class="stats-header">Damage</p>
+            <p id="dmg-3-mobile">[45/55]</p>
+            <p id="dmg-3-mirror-mobile">[90/110]</p>
+
+            <p class="stats-header">Attack Rate</p>
+            <p id="bar-3-mobile">0.83</p>
+            <p id="bar-3-mirror-mobile">0.83</p>
+
+            <p class="stats-header">Move Speed</p>
+            <p id="ms-3-mobile">310</p>
+            <p id="ms-3-mirror-mobile">310</p>
+
+            <p class="stats-header">Attack Range</p>
+            <p id="r-3-mobile">1</p>
+            <p id="r-3-mirror-mobile">1</p>
+
+            <p class="stats-header">Magic Resist</p>
+            <p id="res-3-mobile">30</p>
+            <p id="res-3-mirror-mobile">40</p>
+
+            <p class="stats-header">Armor</p>
+            <p id="a-3-mobile">5</p>
+            <p id="a-3-mirror-mobile">5</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
