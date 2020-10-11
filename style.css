@@ -115,6 +115,22 @@ p
     text-align: center;
 }
 
+.fab-icon
+{
+    display: none;
+    width: 24px;
+    height: 24px;
+    
+    padding: 16px;
+    background-color: #3cb3d7;
+    border-radius: 50%;
+    box-shadow: 0 6px 10px 0 #666;
+  
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+}
+
 @media only screen and (max-width: 900px) 
 {
     .vs
@@ -251,6 +267,11 @@ p
         flex-flow: column;
         align-items: flex-end;
     }
+
+    .fab-icon
+    {
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 420px) 
@@ -264,4 +285,9 @@ p
     {
         height: unset;
     }
+    .fab-icon
+    {
+        padding: 8px;
+    }
+
 }

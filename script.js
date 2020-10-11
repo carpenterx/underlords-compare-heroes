@@ -4,6 +4,9 @@ let properties = ["health", "mana", "dps", "dmg", "bar", "ms", "r", "res", "a"];
 var select1 = document.getElementById("select-hero-1");
 var select2 = document.getElementById("select-hero-2");
 var jsonData;
+var fab = document.getElementById("fab");
+
+fab.addEventListener("click", () => { window.scrollTo(0, 0); });
 
 properties.forEach(property => AddListenersToBase(property));
 
