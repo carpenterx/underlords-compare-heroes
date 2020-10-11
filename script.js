@@ -5,6 +5,17 @@ var select1 = document.getElementById("select-hero-1");
 var select2 = document.getElementById("select-hero-2");
 var jsonData;
 var fab = document.getElementById("fab");
+var filter1Value = 0;
+var hero1lvl1 = document.getElementById("hero-1-level-1");
+var hero1lvl2 = document.getElementById("hero-1-level-2");
+var hero1lvl3 = document.getElementById("hero-1-level-3");
+var hero1Filters = Array.of(hero1lvl1, hero1lvl2, hero1lvl3);
+var filter2Value = 0;
+var hero2lvl1 = document.getElementById("hero-2-level-1");
+var hero2lvl2 = document.getElementById("hero-2-level-2");
+var hero2lvl3 = document.getElementById("hero-2-level-3");
+var hero2Filters = Array.of(hero2lvl1, hero2lvl2, hero2lvl3);
+//var filtered = false;
 
 fab.addEventListener("click", () => { window.scrollTo(0, 0); });
 
@@ -20,10 +31,80 @@ xmlhttp.onreadystatechange = function() {
     select2.addEventListener("change", LoadNewHero2);
     ChooseRandomHero(select1);
     ChooseRandomHero(select2);
+    //hero1lvl1.addEventListener("click", UpdateFilter);
+    //hero1lvl2.addEventListener("click", UpdateFilter);
+    //hero1lvl3.addEventListener("click", UpdateFilter);
+    hero1Filters.forEach(filter => filter.addEventListener("click", UpdateFilter1));
+    hero2Filters.forEach(filter => filter.addEventListener("click", UpdateFilter2));
   }
 };
 xmlhttp.open("GET", "data/underlords.json", true);
 xmlhttp.send();
+
+function UpdateFilter1()
+{
+    if(this.classList.contains("selected-filter"))
+    {
+        this.classList.remove("selected-filter");
+        Unfilter();
+        filter1Value = 0;
+    }
+    else
+    {
+        this.classList.add("selected-filter");
+        filter1Value = this.id.charAt(this.id.length-1);
+    }
+    hero1Filters.forEach(filter => RemoveHighlight(filter, this.id));
+    if(filter1Value > 0 && filter2Value > 0)
+    {
+        Filter();
+    }
+}
+
+function UpdateFilter2()
+{
+    if(this.classList.contains("selected-filter"))
+    {
+        this.classList.remove("selected-filter");
+        Unfilter();
+        filter2Value = 0;
+    }
+    else
+    {
+        this.classList.add("selected-filter");
+        filter2Value = this.id.charAt(this.id.length-1);
+    }
+    hero2Filters.forEach(filter => RemoveHighlight(filter, this.id));
+    if(filter1Value > 0 && filter2Value > 0)
+    {
+        Filter();
+    }
+}
+
+function Filter()
+{
+    properties.forEach(property => RemoveListenersFromBase(property));
+    properties.forEach(property => RemoveListenersFromFilters(property));
+    properties.forEach(property => AddListenersToFilters(property));
+}
+
+function Unfilter()
+{
+    filter1Value = 0;
+    filter2Value = 0;
+    hero1Filters.forEach(filter => RemoveHighlight(filter, 0));
+    hero2Filters.forEach(filter => RemoveHighlight(filter, 0));
+    properties.forEach(property => RemoveListenersFromFilters(property));
+    properties.forEach(property => AddListenersToBase(property));
+}
+
+function RemoveHighlight(element, clickedId = 0)
+{
+    if(element.id != clickedId)
+    {
+        element.classList.remove("selected-filter");
+    }
+}
 
 function ChooseRandomHero(select)
 {
@@ -51,12 +132,12 @@ function InitializeDropdown(select)
 
 function LoadNewHero1()
 {
-    LoadHeroData(select1.selectedIndex);
+    LoadHeroData(this.selectedIndex);
 }
 
 function LoadNewHero2()
 {
-    LoadHeroData(select2.selectedIndex, 2);
+    LoadHeroData(this.selectedIndex, 2);
 }
 
 function LoadHeroData(heroIndex, heroPosition = 1)
@@ -142,6 +223,87 @@ function ExtractData(dataString)
     }
 }
 
+function AddListenersToFilters(baseName)
+{
+    element1Id = baseName + "-" + filter1Value;
+    element1 = document.getElementById(element1Id);
+    element1.addEventListener("mouseover", ChangeFilterOutline, false);
+    element1.addEventListener("mouseout", ResetFilterOutline, false);
+    element1.classList.add("filter-background");
+
+    element2Id = baseName + "-" + filter2Value + mirrorFragment;
+    element2 = document.getElementById(element2Id);
+    element2.addEventListener("mouseover", ChangeFilterOutline, false);
+    element2.addEventListener("mouseout", ResetFilterOutline, false);
+    element2.classList.add("filter-background");
+}
+
+function ChangeFilterOutline(event)
+{
+    event.target.style.outline = "4px solid green";
+
+    var elementId = event.srcElement.id;
+    var mirrorId = GetFilterMirrorId(elementId);
+    mirrorElement = document.getElementById(mirrorId);
+    mirrorElement.style.outline = "3px solid green";
+}
+
+function ResetFilterOutline(event)
+{
+    event.target.style.outline = "unset";
+
+    var elementId = event.srcElement.id;
+    var mirrorId = GetFilterMirrorId(elementId);
+    mirrorElement = document.getElementById(mirrorId);
+    mirrorElement.style.outline = "unset";
+}
+
+function GetFilterMirrorId(id)
+{
+    baseName = GetBaseName(id);
+    if(id.indexOf(mirrorFragment) != -1)
+    {
+        return baseName + "-" + filter1Value;
+    }
+    else
+    {
+        return baseName + "-" + filter2Value + mirrorFragment;
+    }
+}
+
+function GetBaseName(id)
+{
+    return id.slice(0, id.indexOf("-"));
+}
+
+function RemoveListenersFromFilters(baseName)
+{
+    // element1Id = baseName + "-" + filter1Value;
+    // element1 = document.getElementById(element1Id);
+    // element1.removeEventListener("mouseover", ChangeFilterOutline, false);
+    // element1.removeEventListener("mouseout", ResetFilterOutline, false);
+
+    // element2Id = baseName + "-" + filter2Value + mirrorFragment;
+    // element2 = document.getElementById(element2Id);
+    // element2.removeEventListener("mouseover", ChangeFilterOutline, false);
+    // element2.removeEventListener("mouseout", ResetFilterOutline, false);
+    RemoveFilterListeners(baseName + "-1");
+    RemoveFilterListeners(baseName + "-2");
+    RemoveFilterListeners(baseName + "-3");
+
+    RemoveFilterListeners(baseName + "-1" + mirrorFragment);
+    RemoveFilterListeners(baseName + "-2" + mirrorFragment);
+    RemoveFilterListeners(baseName + "-3" + mirrorFragment);
+}
+
+function RemoveFilterListeners(elementId)
+{
+    element = document.getElementById(elementId);
+    element.removeEventListener("mouseover", ChangeFilterOutline, false);
+    element.removeEventListener("mouseout", ResetFilterOutline, false);
+    element.classList.remove("filter-background");
+}
+
 function AddListenersToBase(baseName)
 {
     AddListeners(baseName, "-1");
@@ -159,6 +321,25 @@ function AddListeners(baseName, number = "", mirror = "")
     element = document.getElementById(elementId);
     element.addEventListener("mouseover", ChangeOutline, false);
     element.addEventListener("mouseout", ResetOutline, false);
+}
+
+function RemoveListenersFromBase(baseName)
+{
+    RemoveListeners(baseName, "-1");
+    RemoveListeners(baseName, "-2");
+    RemoveListeners(baseName, "-3");
+
+    RemoveListeners(baseName, "-1", mirrorFragment);
+    RemoveListeners(baseName, "-2", mirrorFragment);
+    RemoveListeners(baseName, "-3", mirrorFragment);
+}
+
+function RemoveListeners(baseName, number = "", mirror = "")
+{
+    elementId = baseName + number + mirror;
+    element = document.getElementById(elementId);
+    element.removeEventListener("mouseover", ChangeOutline, false);
+    element.removeEventListener("mouseout", ResetOutline, false);
 }
 
 function ChangeOutline(event)

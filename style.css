@@ -17,6 +17,11 @@ p
     background-color: #efefef;
 }
 
+.filter-background
+{
+    background-color: #f0cda1;
+}
+
 .vs
 {
     font-family: 'Permanent Marker', cursive;
@@ -113,6 +118,16 @@ p
 .center-text
 {
     text-align: center;
+}
+
+.selected-filter
+{
+    background-color: #f7991f;
+}
+
+.filter-button
+{
+    cursor: pointer;
 }
 
 .fab-icon
