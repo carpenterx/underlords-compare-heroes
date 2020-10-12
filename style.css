@@ -13,7 +13,7 @@ p
 {
     line-height: 20px;
     padding: 4px;
-    margin: 12px 4px 12px 4px;
+    margin: 10px 4px 10px 4px;
     background-color: #efefef;
 }
 
@@ -110,6 +110,12 @@ p
     background-color: #3cb3d7;
 }
 
+.filter-element
+{
+    height: 40px;
+    line-height: 40px;
+}
+
 .uppercase
 {
     text-transform: uppercase;
@@ -144,6 +150,21 @@ p
     position: fixed;
     right: 16px;
     bottom: 16px;
+}
+
+.mobile-filter
+{
+    display: none;
+}
+
+.hide
+{
+    display: none;
+}
+
+.extra-margin-bot
+{
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 900px) 
@@ -266,10 +287,18 @@ p
         margin: 6px 2px 6px 2px;
     }
 
+    .mobile-filter
+    {
+        display: grid;
+        grid-template-columns: 5fr 2fr 2fr 2fr;
+    }
+
     .mobile-stats
     {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 5fr 3fr 3fr;
+        grid-auto-rows: 1fr;
+        padding-bottom: 60px;
     }
     .double-colums
     {
@@ -300,9 +329,10 @@ p
     {
         height: unset;
     }
-    .fab-icon
+
+    /*.fab-icon
     {
         padding: 8px;
-    }
+    }*/
 
 }

@@ -1,6 +1,8 @@
 let mirrorFragment = "-mirror";
 let mobileSuffix = "-mobile";
 let properties = ["health", "mana", "dps", "dmg", "bar", "ms", "r", "res", "a"];
+var mainOutline = "4px solid #3cb3d7";
+var secondaryOutline = "3px solid #3cb3d7";
 var select1 = document.getElementById("select-hero-1");
 var select2 = document.getElementById("select-hero-2");
 var jsonData;
@@ -9,13 +11,18 @@ var filter1Value = 0;
 var hero1lvl1 = document.getElementById("hero-1-level-1");
 var hero1lvl2 = document.getElementById("hero-1-level-2");
 var hero1lvl3 = document.getElementById("hero-1-level-3");
-var hero1Filters = Array.of(hero1lvl1, hero1lvl2, hero1lvl3);
+var hero1lvl1m = document.getElementById("hero-1-level-1-mobile");
+var hero1lvl2m = document.getElementById("hero-1-level-2-mobile");
+var hero1lvl3m = document.getElementById("hero-1-level-3-mobile");
+var hero1Filters = Array.of(hero1lvl1, hero1lvl2, hero1lvl3, hero1lvl1m, hero1lvl2m, hero1lvl3m);
 var filter2Value = 0;
 var hero2lvl1 = document.getElementById("hero-2-level-1");
 var hero2lvl2 = document.getElementById("hero-2-level-2");
 var hero2lvl3 = document.getElementById("hero-2-level-3");
-var hero2Filters = Array.of(hero2lvl1, hero2lvl2, hero2lvl3);
-//var filtered = false;
+var hero2lvl1m = document.getElementById("hero-2-level-1-mobile");
+var hero2lvl2m = document.getElementById("hero-2-level-2-mobile");
+var hero2lvl3m = document.getElementById("hero-2-level-3-mobile");
+var hero2Filters = Array.of(hero2lvl1, hero2lvl2, hero2lvl3, hero2lvl1m, hero2lvl2m, hero2lvl3m);
 
 fab.addEventListener("click", () => { window.scrollTo(0, 0); });
 
@@ -31,9 +38,6 @@ xmlhttp.onreadystatechange = function() {
     select2.addEventListener("change", LoadNewHero2);
     ChooseRandomHero(select1);
     ChooseRandomHero(select2);
-    //hero1lvl1.addEventListener("click", UpdateFilter);
-    //hero1lvl2.addEventListener("click", UpdateFilter);
-    //hero1lvl3.addEventListener("click", UpdateFilter);
     hero1Filters.forEach(filter => filter.addEventListener("click", UpdateFilter1));
     hero2Filters.forEach(filter => filter.addEventListener("click", UpdateFilter2));
   }
@@ -41,20 +45,113 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", "data/underlords.json", true);
 xmlhttp.send();
 
+function HideMobileHeaderElements()
+{
+    var elements = document.getElementsByClassName("to-hide");
+    var i;
+    for (i = 0; i < elements.length; i++) {
+        elements[i].classList.add("hide");
+    }
+}
+
+function ShowMobileHeaderElements()
+{
+    var elements = document.getElementsByClassName("to-hide");
+    var i;
+    for (i = 0; i < elements.length; i++) {
+        elements[i].classList.remove("hide");
+    }
+}
+
+function HideMobileHeroData()
+{
+    var i;
+    for(i = 1; i <= 3; i++)
+    {
+        if(i != filter1Value)
+        {
+            //properties.forEach(property => HideElement(property, i));
+            //hero-1-data-1-mobile
+            HideElement("hero-1-data", i);
+        }
+        else
+        {
+            //properties.forEach(property => ShowElement(property, i));
+            ShowElement("hero-1-data", i);
+        }
+        if(i != filter2Value)
+        {
+            //properties.forEach(property => HideElement(property, i, mirrorFragment));
+            HideElement("hero-2-data", i);
+        }
+        else
+        {
+            //properties.forEach(property => ShowElement(property, i, mirrorFragment));
+            ShowElement("hero-2-data", i);
+        }
+    }
+}
+
+function ShowMobileHeroData()
+{
+    var i;
+    for(i = 1; i <= 3; i++)
+    {
+        //properties.forEach(property => ShowElement(property, i));
+        ShowElement("hero-1-data", i);
+
+        //properties.forEach(property => ShowElement(property, i, mirrorFragment));
+        ShowElement("hero-2-data", i);
+    }
+}
+
+function HideElement(property, index)
+{
+    var element = document.getElementById(property + "-" + index + mobileSuffix);
+    
+    element.classList.add("hide");
+}
+
+function ShowElement(property, index)
+{
+    var element = document.getElementById(property + "-" + index + mobileSuffix);
+    element.classList.remove("hide");
+}
+
 function UpdateFilter1()
 {
-    if(this.classList.contains("selected-filter"))
+    var element;
+    var elementId;
+    var mobileElement;
+    
+    if(this.id.indexOf(mobileSuffix) != -1)
     {
-        this.classList.remove("selected-filter");
+        elementId = this.id.replace(mobileSuffix, "");
+        element = document.getElementById(elementId);
+        mobileElement = this;
+    }
+    else
+    {
+        element = this;
+        elementId = this.id;
+        mobileElement = document.getElementById(elementId + mobileSuffix);;
+    }
+
+    var filterValue = elementId.charAt(elementId.length-1);
+    if(element.classList.contains("selected-filter"))
+    {
+        element.classList.remove("selected-filter");
+        mobileElement.classList.remove("selected-filter");
         Unfilter();
         filter1Value = 0;
     }
     else
     {
-        this.classList.add("selected-filter");
-        filter1Value = this.id.charAt(this.id.length-1);
+        element.classList.add("selected-filter");
+        mobileElement.classList.add("selected-filter");
+        filter1Value = filterValue;
     }
-    hero1Filters.forEach(filter => RemoveHighlight(filter, this.id));
+    hero1Filters.forEach(filter => RemoveHighlight(filter, filterValue));
     if(filter1Value > 0 && filter2Value > 0)
     {
         Filter();
@@ -63,18 +160,38 @@ function UpdateFilter1()
 
 function UpdateFilter2()
 {
-    if(this.classList.contains("selected-filter"))
+    var element;
+    var elementId;
+    var mobileElement;
+    
+    if(this.id.indexOf(mobileSuffix) != -1)
     {
-        this.classList.remove("selected-filter");
+        elementId = this.id.replace(mobileSuffix, "");
+        element = document.getElementById(elementId);
+        mobileElement = this;
+    }
+    else
+    {
+        element = this;
+        elementId = this.id;
+        mobileElement = document.getElementById(elementId + mobileSuffix);;
+    }
+
+    var filterValue = elementId.charAt(elementId.length-1);
+    if(element.classList.contains("selected-filter"))
+    {
+        element.classList.remove("selected-filter");
+        mobileElement.classList.remove("selected-filter");
         Unfilter();
         filter2Value = 0;
     }
     else
     {
-        this.classList.add("selected-filter");
-        filter2Value = this.id.charAt(this.id.length-1);
+        element.classList.add("selected-filter");
+        mobileElement.classList.add("selected-filter");
+        filter2Value = filterValue;
     }
-    hero2Filters.forEach(filter => RemoveHighlight(filter, this.id));
+    hero2Filters.forEach(filter => RemoveHighlight(filter, filterValue));
     if(filter1Value > 0 && filter2Value > 0)
     {
         Filter();
@@ -83,6 +200,8 @@ function UpdateFilter2()
 
 function Filter()
 {
+    HideMobileHeaderElements();
+    HideMobileHeroData();
     properties.forEach(property => RemoveListenersFromBase(property));
     properties.forEach(property => RemoveListenersFromFilters(property));
     properties.forEach(property => AddListenersToFilters(property));
@@ -92,15 +211,19 @@ function Unfilter()
 {
     filter1Value = 0;
     filter2Value = 0;
+    ShowMobileHeaderElements();
+    ShowMobileHeroData();
     hero1Filters.forEach(filter => RemoveHighlight(filter, 0));
     hero2Filters.forEach(filter => RemoveHighlight(filter, 0));
     properties.forEach(property => RemoveListenersFromFilters(property));
     properties.forEach(property => AddListenersToBase(property));
 }
 
-function RemoveHighlight(element, clickedId = 0)
+function RemoveHighlight(element, filterValue = 0)
 {
-    if(element.id != clickedId)
+    var baseElementId = element.id.replace(mobileSuffix, "");
+    var elementValue = baseElementId.charAt(baseElementId.length-1);
+    if(elementValue != filterValue)
     {
         element.classList.remove("selected-filter");
     }
@@ -240,12 +363,12 @@ function AddListenersToFilters(baseName)
 
 function ChangeFilterOutline(event)
 {
-    event.target.style.outline = "4px solid green";
+    event.target.style.outline = mainOutline;
 
     var elementId = event.srcElement.id;
     var mirrorId = GetFilterMirrorId(elementId);
     mirrorElement = document.getElementById(mirrorId);
-    mirrorElement.style.outline = "3px solid green";
+    mirrorElement.style.outline = secondaryOutline;
 }
 
 function ResetFilterOutline(event)
@@ -344,12 +467,12 @@ function RemoveListeners(baseName, number = "", mirror = "")
 
 function ChangeOutline(event)
 {
-    event.target.style.outline = "4px solid green";
+    event.target.style.outline = mainOutline;
 
     var elementId = event.srcElement.id;
     var mirrorId = GetMirrorId(elementId);
     mirrorElement = document.getElementById(mirrorId);
-    mirrorElement.style.outline = "3px solid green";
+    mirrorElement.style.outline = secondaryOutline;
 }
 
 function ResetOutline(event)

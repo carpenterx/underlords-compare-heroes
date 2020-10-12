@@ -46,10 +46,10 @@
             </div>
 
             <div class="stats">
-                <p class="stats-header uppercase">Level</p>
-                <p class="stats-header center-text filter-button" id="hero-1-level-1">1</p>
-                <p class="stats-header center-text filter-button" id="hero-1-level-2">2</p>
-                <p class="stats-header center-text filter-button" id="hero-1-level-3">3</p>
+                <p class="stats-header uppercase filter-element">Level</p>
+                <p class="stats-header center-text filter-button filter-element" id="hero-1-level-1">1</p>
+                <p class="stats-header center-text filter-button filter-element" id="hero-1-level-2">2</p>
+                <p class="stats-header center-text filter-button filter-element" id="hero-1-level-3">3</p>
 
                 <p class="stats-header">Health</p>
                 <p id="health-1">750</p>
@@ -118,10 +118,10 @@
             </div>
 
             <div class="stats">
-                <p class="stats-header uppercase">Level</p>
-                <p class="stats-header center-text filter-button" id="hero-2-level-1">1</p>
-                <p class="stats-header center-text filter-button" id="hero-2-level-2">2</p>
-                <p class="stats-header center-text filter-button" id="hero-2-level-3">3</p>
+                <p class="stats-header uppercase filter-element">Level</p>
+                <p class="stats-header center-text filter-button filter-element" id="hero-2-level-1">1</p>
+                <p class="stats-header center-text filter-button filter-element" id="hero-2-level-2">2</p>
+                <p class="stats-header center-text filter-button filter-element" id="hero-2-level-3">3</p>
 
                 <p class="stats-header">Health</p>
                 <p id="health-1-mirror">825</p>
@@ -169,123 +169,139 @@
                 <p id="a-3-mirror">5</p>
             </div>
         </div>
+        <div class="mobile-filter">
+            <p class="stats-header uppercase filter-element">Hero 1</p>
+            <p class="stats-header center-text filter-button filter-element" id="hero-1-level-1-mobile">1</p>
+            <p class="stats-header center-text filter-button filter-element" id="hero-1-level-2-mobile">2</p>
+            <p class="stats-header center-text filter-button filter-element" id="hero-1-level-3-mobile">3</p>
+            <p class="stats-header uppercase filter-element">Hero 2</p>
+            <p class="stats-header center-text filter-button filter-element" id="hero-2-level-1-mobile">1</p>
+            <p class="stats-header center-text filter-button filter-element" id="hero-2-level-2-mobile">2</p>
+            <p class="stats-header center-text filter-button filter-element" id="hero-2-level-3-mobile">3</p>
+        </div>
         <div class="mobile-stats">
-            <p class="stats-header uppercase">Level</p>
-            <p class="stats-header center-text double-colums">1</p>
+            <!-- <p class="stats-header uppercase to-hide">Level</p> -->
+            <!-- <p class="stats-header center-text double-colums to-hide">1</p> -->
 
-            <p class="stats-header">Health</p>
-            <p id="health-1-mobile">750</p>
-            <p id="health-1-mirror-mobile">1500</p>
+            <div>
+                <div class="extra-margin-bot" id="labels-1-mobile">
+                    <p class="stats-header">Health</p>
+                    <p class="stats-header">Mana</p>
+                    <p class="stats-header">DPS</p>
+                    <p class="stats-header">Damage</p>
+                    <p class="stats-header">Attack Rate</p>
+                    <p class="stats-header">Move Speed</p>
+                    <p class="stats-header">Attack Range</p>
+                    <p class="stats-header">Magic Resist</p>
+                    <p class="stats-header">Armor</p>
+                </div>
 
-            <p class="stats-header">Mana</p>
-            <p id="mana-1-mobile">0</p>
-            <p id="mana-1-mirror-mobile">0</p>
+                <div class="to-hide extra-margin-bot" id="labels-2-mobile">
+                    <p class="stats-header">Health **</p>
+                    <p class="stats-header">Mana **</p>
+                    <p class="stats-header">DPS **</p>
+                    <p class="stats-header">Damage **</p>
+                    <p class="stats-header">Attack Rate **</p>
+                    <p class="stats-header">Move Speed **</p>
+                    <p class="stats-header">Attack Range **</p>
+                    <p class="stats-header">Magic Resist **</p>
+                    <p class="stats-header">Armor **</p>
+                </div>
 
-            <p class="stats-header">DPS</p>
-            <p id="dps-1-mobile">42</p>
-            <p id="dps-1-mirror-mobile">83</p>
+                <div class="to-hide extra-margin-bot" id="labels-3-mobile">
+                    <p class="stats-header">Health ***</p>
+                    <p class="stats-header">Mana ***</p>
+                    <p class="stats-header">DPS ***</p>
+                    <p class="stats-header">Damage ***</p>
+                    <p class="stats-header">Attack Rate ***</p>
+                    <p class="stats-header">Move Speed ***</p>
+                    <p class="stats-header">Attack Range ***</p>
+                    <p class="stats-header">Magic Resist ***</p>
+                    <p class="stats-header">Armor ***</p>
+                </div>
+            </div>
 
-            <p class="stats-header">Damage</p>
-            <p id="dmg-1-mobile">[45/55]</p>
-            <p id="dmg-1-mirror-mobile">[90/110]</p>
+            <!-- <p class="stats-header uppercase to-hide">Level</p> -->
+            <!-- <p class="stats-header center-text double-colums to-hide">2</p> -->
 
-            <p class="stats-header">Attack Rate</p>
-            <p id="bar-1-mobile">0.83</p>
-            <p id="bar-1-mirror-mobile">0.83</p>
+            <div>
+                <div class="extra-margin-bot" id="hero-1-data-1-mobile">
+                    <p id="health-1-mobile">750</p>
+                    <p id="mana-1-mobile">0</p>
+                    <p id="dps-1-mobile">42</p>
+                    <p id="dmg-1-mobile">[45/55]</p>
+                    <p id="bar-1-mobile">0.83</p>
+                    <p id="ms-1-mobile">310</p>
+                    <p id="r-1-mobile">1</p>
+                    <p id="res-1-mobile">30</p>
+                    <p id="a-1-mobile">5</p>
+                </div>
+    
+                <div class="extra-margin-bot" id="hero-1-data-2-mobile">
+                    <p id="health-2-mobile">750</p>
+                    <p id="mana-2-mobile">0</p>
+                    <p id="dps-2-mobile">42</p>
+                    <p id="dmg-2-mobile">[45/55]</p>
+                    <p id="bar-2-mobile">0.83</p>
+                    <p id="ms-2-mobile">310</p>
+                    <p id="r-2-mobile">1</p>
+                    <p id="res-2-mobile">30</p>
+                    <p id="a-2-mobile">5</p>
+                </div>
 
-            <p class="stats-header">Move Speed</p>
-            <p id="ms-1-mobile">310</p>
-            <p id="ms-1-mirror-mobile">310</p>
+                <div class="extra-margin-bot" id="hero-1-data-3-mobile">
+                    <p id="health-3-mobile">750</p>
+                    <p id="mana-3-mobile">0</p>
+                    <p id="dps-3-mobile">42</p>
+                    <p id="dmg-3-mobile">[45/55]</p>
+                    <p id="bar-3-mobile">0.83</p>
+                    <p id="ms-3-mobile">310</p>
+                    <p id="r-3-mobile">1</p>
+                    <p id="res-3-mobile">30</p>
+                    <p id="a-3-mobile">5</p>
+                </div>
+            </div>
 
-            <p class="stats-header">Attack Range</p>
-            <p id="r-1-mobile">1</p>
-            <p id="r-1-mirror-mobile">1</p>
+            <!-- <p class="stats-header uppercase to-hide">Level</p> -->
+            <!-- <p class="stats-header center-text double-colums to-hide">3</p> -->
 
-            <p class="stats-header">Magic Resist</p>
-            <p id="res-1-mobile">30</p>
-            <p id="res-1-mirror-mobile">40</p>
-
-            <p class="stats-header">Armor</p>
-            <p id="a-1-mobile">5</p>
-            <p id="a-1-mirror-mobile">5</p>
-
-            <p class="stats-header uppercase">Level</p>
-            <p class="stats-header center-text double-colums">2</p>
-
-            <p class="stats-header">Health</p>
-            <p id="health-2-mobile">750</p>
-            <p id="health-2-mirror-mobile">1500</p>
-
-            <p class="stats-header">Mana</p>
-            <p id="mana-2-mobile">0</p>
-            <p id="mana-2-mirror-mobile">0</p>
-
-            <p class="stats-header">DPS</p>
-            <p id="dps-2-mobile">42</p>
-            <p id="dps-2-mirror-mobile">83</p>
-
-            <p class="stats-header">Damage</p>
-            <p id="dmg-2-mobile">[45/55]</p>
-            <p id="dmg-2-mirror-mobile">[90/110]</p>
-
-            <p class="stats-header">Attack Rate</p>
-            <p id="bar-2-mobile">0.83</p>
-            <p id="bar-2-mirror-mobile">0.83</p>
-
-            <p class="stats-header">Move Speed</p>
-            <p id="ms-2-mobile">310</p>
-            <p id="ms-2-mirror-mobile">310</p>
-
-            <p class="stats-header">Attack Range</p>
-            <p id="r-2-mobile">1</p>
-            <p id="r-2-mirror-mobile">1</p>
-
-            <p class="stats-header">Magic Resist</p>
-            <p id="res-2-mobile">30</p>
-            <p id="res-2-mirror-mobile">40</p>
-
-            <p class="stats-header">Armor</p>
-            <p id="a-2-mobile">5</p>
-            <p id="a-2-mirror-mobile">5</p>
-
-            <p class="stats-header uppercase">Level</p>
-            <p class="stats-header center-text double-colums">3</p>
-
-            <p class="stats-header">Health</p>
-            <p id="health-3-mobile">750</p>
-            <p id="health-3-mirror-mobile">1500</p>
-
-            <p class="stats-header">Mana</p>
-            <p id="mana-3-mobile">0</p>
-            <p id="mana-3-mirror-mobile">0</p>
-
-            <p class="stats-header">DPS</p>
-            <p id="dps-3-mobile">42</p>
-            <p id="dps-3-mirror-mobile">83</p>
-
-            <p class="stats-header">Damage</p>
-            <p id="dmg-3-mobile">[45/55]</p>
-            <p id="dmg-3-mirror-mobile">[90/110]</p>
-
-            <p class="stats-header">Attack Rate</p>
-            <p id="bar-3-mobile">0.83</p>
-            <p id="bar-3-mirror-mobile">0.83</p>
-
-            <p class="stats-header">Move Speed</p>
-            <p id="ms-3-mobile">310</p>
-            <p id="ms-3-mirror-mobile">310</p>
-
-            <p class="stats-header">Attack Range</p>
-            <p id="r-3-mobile">1</p>
-            <p id="r-3-mirror-mobile">1</p>
-
-            <p class="stats-header">Magic Resist</p>
-            <p id="res-3-mobile">30</p>
-            <p id="res-3-mirror-mobile">40</p>
-
-            <p class="stats-header">Armor</p>
-            <p id="a-3-mobile">5</p>
-            <p id="a-3-mirror-mobile">5</p>
+            <div>
+                <div class="extra-margin-bot" id="hero-2-data-1-mobile">
+                    <p id="health-1-mirror-mobile">1500</p>
+                    <p id="mana-1-mirror-mobile">0</p>
+                    <p id="dps-1-mirror-mobile">83</p>
+                    <p id="dmg-1-mirror-mobile">[90/110]</p>
+                    <p id="bar-1-mirror-mobile">0.83</p>
+                    <p id="ms-1-mirror-mobile">310</p>
+                    <p id="r-1-mirror-mobile">1</p>
+                    <p id="res-1-mirror-mobile">40</p>
+                    <p id="a-1-mirror-mobile">5</p>
+                </div>
+    
+                <div class="extra-margin-bot" id="hero-2-data-2-mobile">
+                    <p id="health-2-mirror-mobile">1500</p>
+                    <p id="mana-2-mirror-mobile">0</p>
+                    <p id="dps-2-mirror-mobile">83</p>
+                    <p id="dmg-2-mirror-mobile">[90/110]</p>
+                    <p id="bar-2-mirror-mobile">0.83</p>
+                    <p id="ms-2-mirror-mobile">310</p>
+                    <p id="r-2-mirror-mobile">1</p>
+                    <p id="res-2-mirror-mobile">40</p>
+                    <p id="a-2-mirror-mobile">5</p>
+                </div>
+    
+                <div class="extra-margin-bot" id="hero-2-data-3-mobile">
+                    <p id="health-3-mirror-mobile">1500</p>
+                    <p id="mana-3-mirror-mobile">0</p>
+                    <p id="dps-3-mirror-mobile">83</p>
+                    <p id="dmg-3-mirror-mobile">[90/110]</p>
+                    <p id="bar-3-mirror-mobile">0.83</p>
+                    <p id="ms-3-mirror-mobile">310</p>
+                    <p id="r-3-mirror-mobile">1</p>
+                    <p id="res-3-mirror-mobile">40</p>
+                    <p id="a-3-mirror-mobile">5</p>
+                </div>
+            </div>
         </div>
         <div class="fab-icon" id="fab"><img src="images/arrow_upward-24px.svg" alt=""></div>
     </div>
