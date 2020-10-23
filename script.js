@@ -70,23 +70,18 @@ function HideMobileHeroData()
     {
         if(i != filter1Value)
         {
-            //properties.forEach(property => HideElement(property, i));
-            //hero-1-data-1-mobile
             HideElement("hero-1-data", i);
         }
         else
         {
-            //properties.forEach(property => ShowElement(property, i));
             ShowElement("hero-1-data", i);
         }
         if(i != filter2Value)
         {
-            //properties.forEach(property => HideElement(property, i, mirrorFragment));
             HideElement("hero-2-data", i);
         }
         else
         {
-            //properties.forEach(property => ShowElement(property, i, mirrorFragment));
             ShowElement("hero-2-data", i);
         }
     }
@@ -97,10 +92,8 @@ function ShowMobileHeroData()
     var i;
     for(i = 1; i <= 3; i++)
     {
-        //properties.forEach(property => ShowElement(property, i));
         ShowElement("hero-1-data", i);
 
-        //properties.forEach(property => ShowElement(property, i, mirrorFragment));
         ShowElement("hero-2-data", i);
     }
 }
@@ -266,11 +259,8 @@ function LoadNewHero2()
 function LoadHeroData(heroIndex, heroPosition = 1)
 {
     let hero = jsonData.heroes[heroIndex];
-    //document.getElementById("hero-name-" + heroPosition).innerHTML = hero["name"];
     document.getElementById("hero-icon-" + heroPosition).innerHTML = '<img src="images/heroes/' + hero["icon"] + '" alt="' + hero["name"] + '"></img>';
-    //document.getElementById("synergies-" + heroPosition).innerHTML = ShowSynergies(hero["synergies"]);
     SetSynergies(heroPosition, ShowSynergies(hero["synergies"]));
-    //document.getElementById("hero-tier-" + heroPosition).innerHTML = "Tier " + hero["tier"];
     SetTierValues(heroPosition, "Tier " + hero["tier"]);
     properties.forEach(property => LoadData(property, hero[property], heroPosition));
 }
@@ -293,7 +283,6 @@ function ShowSynergies(synergiesString)
     let synergies = synergiesString.split(" ");
     for(var i = 0; i < synergies.length; i++)
     {
-        // <img src="images/synergies/Rogue.png" alt="Rogue">
         output += '<img class="synergy" src="images/synergies/' + synergies[i] + '.png" alt="' + synergies[i] + '">';
     }
     return output;
@@ -401,15 +390,6 @@ function GetBaseName(id)
 
 function RemoveListenersFromFilters(baseName)
 {
-    // element1Id = baseName + "-" + filter1Value;
-    // element1 = document.getElementById(element1Id);
-    // element1.removeEventListener("mouseover", ChangeFilterOutline, false);
-    // element1.removeEventListener("mouseout", ResetFilterOutline, false);
-
-    // element2Id = baseName + "-" + filter2Value + mirrorFragment;
-    // element2 = document.getElementById(element2Id);
-    // element2.removeEventListener("mouseover", ChangeFilterOutline, false);
-    // element2.removeEventListener("mouseout", ResetFilterOutline, false);
     RemoveFilterListeners(baseName + "-1");
     RemoveFilterListeners(baseName + "-2");
     RemoveFilterListeners(baseName + "-3");
