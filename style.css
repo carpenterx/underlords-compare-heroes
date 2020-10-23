@@ -83,6 +83,11 @@ p
     align-self: start;
 }
 
+.hero-icon {
+    width: 120px;
+    height: 159px;
+}
+
 .flipped {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
@@ -101,6 +106,11 @@ p
 .synergies img:nth-last-child(n+2)
 {
     margin-right: 4px;
+}
+
+.synergy {
+    width: 40px;
+    height: 40px;
 }
 
 .stats

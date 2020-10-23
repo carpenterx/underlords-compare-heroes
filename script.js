@@ -294,7 +294,7 @@ function ShowSynergies(synergiesString)
     for(var i = 0; i < synergies.length; i++)
     {
         // <img src="images/synergies/Rogue.png" alt="Rogue">
-        output += '<img src="images/synergies/' + synergies[i] + '.png" alt="' + synergies[i] + '">';
+        output += '<img class="synergy" src="images/synergies/' + synergies[i] + '.png" alt="' + synergies[i] + '">';
     }
     return output;
 }
