@@ -1,8 +1,8 @@
 let mirrorFragment = "-mirror";
 let mobileSuffix = "-mobile";
 let properties = ["health", "mana", "dps", "dmg", "bar", "ms", "r", "res", "a"];
-var mainOutline = "4px solid #3cb3d7";
-var secondaryOutline = "3px solid #3cb3d7";
+var mainOutline = "4px solid #0980a4";
+var secondaryOutline = "3px solid #0980a4";
 var select1 = document.getElementById("select-hero-1");
 var select2 = document.getElementById("select-hero-2");
 var jsonData;
