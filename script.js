@@ -231,19 +231,118 @@ function ChooseRandomHero(select)
 
 function InitializeDropdown(select)
 {
-    var options = [];
-    jsonData.heroes.forEach(hero => options.push(hero.name));
+    var options1 = [];
+    var options2 = [];
+    var options3 = [];
+    var options4 = [];
+    var options5 = [];
+    //jsonData.heroes.forEach(hero => options.push(hero.name));
 
-    for(var i = 0; i < options.length; i++)
-    {
-        var opt = options[i];
+    for (let i = 0; i < jsonData.heroes.length; i++) {
+        let hero = jsonData.heroes[i];
+        const tier = hero["tier"];
+        const name = hero["name"];
+        switch (tier) {
+            case "1":
+                options1.push(name);
+                break;
+            case "2":
+                options2.push(name);
+                break;
+            case "3":
+                options3.push(name);
+                break;
+            case "4":
+                options4.push(name);
+                break;
+            case "5":
+                options5.push(name);
+                break;
+        }
+    }
+
+    var group1 = document.createElement("optgroup");
+    group1.label = "Tier 1";
+    select.add(group1);
+    for (let i = 0; i < options1.length; i++) {
+        var opt = options1[i];
 
         var el = document.createElement("option");
         el.text = opt;
         el.value = opt;
 
+        //group1.add(el);
         select.add(el);
     }
+    
+    var group2 = document.createElement("optgroup");
+    group2.label = "Tier 2";
+    select.add(group2);
+    for (let i = 0; i < options2.length; i++) {
+        var opt = options2[i];
+
+        var el = document.createElement("option");
+        el.text = opt;
+        el.value = opt;
+
+        //group2.add(el);
+        select.add(el);
+    }
+    
+    var group3 = document.createElement("optgroup");
+    group3.label = "Tier 3";
+    select.add(group3);
+    for (let i = 0; i < options3.length; i++) {
+        var opt = options3[i];
+
+        var el = document.createElement("option");
+        el.text = opt;
+        el.value = opt;
+
+        //group3.add(el);
+        select.add(el);
+    }
+
+    var group4 = document.createElement("optgroup");
+    group4.label = "Tier 4";
+    select.add(group4);
+    for (let i = 0; i < options4.length; i++) {
+        var opt = options4[i];
+
+        var el = document.createElement("option");
+        el.text = opt;
+        el.value = opt;
+
+        //group4.add(el);
+        select.add(el);
+    }
+    
+
+    var group5 = document.createElement("optgroup");
+    group5.label = "Tier 5";
+    select.add(group5);
+    for (let i = 0; i < options5.length; i++) {
+        var opt = options5[i];
+
+        var el = document.createElement("option");
+        el.text = opt;
+        el.value = opt;
+
+        //group5.add(el);
+        select.add(el);
+    }
+    
+
+    // for(var i = 0; i < options.length; i++)
+    // {
+    //     var opt = options[i];
+
+    //     var el = document.createElement("option");
+    //     el.text = opt;
+    //     el.value = opt;
+
+    //     select.add(el);
+    // }
 }
 
 function LoadNewHero1()
