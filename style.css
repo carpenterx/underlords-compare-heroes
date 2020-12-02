@@ -48,6 +48,36 @@ p
     padding: 2px;
 }
 
+optgroup[label="Tier 1"]
+{
+    background-color: #555555;
+}
+
+optgroup[label="Tier 2"]
+{
+    background-color: #475927;
+}
+
+optgroup[label="Tier 3"]
+{
+    background-color: #244383;
+}
+
+optgroup[label="Tier 4"]
+{
+    background-color: #78158A;
+}
+
+optgroup[label="Tier 5"]
+{
+    background-color: #DAAA64;
+}
+
+optgroup option
+{
+    background-color: white;
+}
+
 .mobile-stats, #hero-tier-1-mobile, #hero-tier-2-mobile, #synergies-1-mobile, #synergies-2-mobile
 {
     display: none;
