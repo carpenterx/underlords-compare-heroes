@@ -263,7 +263,6 @@ function InitializeDropdown(select)
 
     var group1 = document.createElement("optgroup");
     group1.label = "Tier 1";
-    select.add(group1);
     for (let i = 0; i < options1.length; i++) {
         var opt = options1[i];
 
@@ -271,13 +270,13 @@ function InitializeDropdown(select)
         el.text = opt;
         el.value = opt;
 
-        //group1.add(el);
-        select.add(el);
+        group1.appendChild(el);
     }
+    select.add(group1);
     
     var group2 = document.createElement("optgroup");
     group2.label = "Tier 2";
-    select.add(group2);
+    
     for (let i = 0; i < options2.length; i++) {
         var opt = options2[i];
 
@@ -285,13 +284,12 @@ function InitializeDropdown(select)
         el.text = opt;
         el.value = opt;
 
-        //group2.add(el);
-        select.add(el);
+        group2.appendChild(el);
     }
+    select.add(group2);
     
     var group3 = document.createElement("optgroup");
     group3.label = "Tier 3";
-    select.add(group3);
     for (let i = 0; i < options3.length; i++) {
         var opt = options3[i];
 
@@ -299,13 +297,12 @@ function InitializeDropdown(select)
         el.text = opt;
         el.value = opt;
 
-        //group3.add(el);
-        select.add(el);
+        group3.appendChild(el);
     }
+    select.add(group3);
 
     var group4 = document.createElement("optgroup");
     group4.label = "Tier 4";
-    select.add(group4);
     for (let i = 0; i < options4.length; i++) {
         var opt = options4[i];
 
@@ -313,14 +310,13 @@ function InitializeDropdown(select)
         el.text = opt;
         el.value = opt;
 
-        //group4.add(el);
-        select.add(el);
+        group4.appendChild(el);
     }
+    select.add(group4);
     
 
     var group5 = document.createElement("optgroup");
     group5.label = "Tier 5";
-    select.add(group5);
     for (let i = 0; i < options5.length; i++) {
         var opt = options5[i];
 
@@ -328,9 +324,9 @@ function InitializeDropdown(select)
         el.text = opt;
         el.value = opt;
 
-        //group5.add(el);
-        select.add(el);
+        group5.appendChild(el);
     }
+    select.add(group5);
     
 
     // for(var i = 0; i < options.length; i++)
