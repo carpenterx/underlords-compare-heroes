@@ -15,6 +15,7 @@ p
     padding: 4px;
     margin: 10px 4px 10px 4px;
     background-color: #efefef;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .filter-background
@@ -31,6 +32,7 @@ p
     background-color: #ffffff;
     color: #ff0000;
     opacity: 0.8;
+    box-shadow: none;
 }
 
 .container
