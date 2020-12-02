@@ -216,11 +216,6 @@ optgroup option
 
 @media only screen and (max-width: 900px) 
 {
-    .vs
-    {
-      display: none;
-    }
-
     .hero
     {
         width: 50%;
@@ -246,7 +241,7 @@ optgroup option
         top: 24px;
         margin-left: -50px;
         background-color: rgba(0, 0, 0, 0);
-        
+        z-index: 100;
     }
 }
 
