@@ -7,7 +7,6 @@ self.addEventListener('install', function(event) {
             "/style.css",
             "/script.js",
             "/data/underlords.json",
-            "/manifest.json",
             "/android-chrome-192x192.png",
             "/android-chrome-512x512.png",
             "/favicon.ico",
