@@ -2,8 +2,8 @@
     "name": "Underlords - Compare Heroes",
     "short_name": "Underlords Compare",
     "description"       : "An application for comparing Underlords heroes",
-    "start_url": ".",
-	"scope": ".",
+    "start_url": "/Underlords-Compare-Heroes/",
+	"scope": "/Underlords-Compare-Heroes/",
     "orientation": "any",
     "icons": [{
         "src": "/android-chrome-192x192.png",
