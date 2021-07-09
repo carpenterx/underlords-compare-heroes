@@ -2,7 +2,7 @@
 if ('serviceWorker' in navigator) {
 
     // register service worker
-    navigator.serviceWorker.register('service-worker.js', {scope: './underlords-compare-heroes/'});
+    navigator.serviceWorker.register('https://carpenterx.github.io/underlords-compare-heroes/service-worker.js', {scope: './underlords-compare-heroes/'});
 }
 
 let mirrorFragment = "-mirror";
