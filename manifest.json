@@ -6,11 +6,11 @@
 	"scope": "/underlords-compare-heroes/",
     "orientation": "any",
     "icons": [{
-        "src": "/underlords-compare-heroes/android-chrome-192x192.png",
+        "src": "https://carpenterx.github.io/underlords-compare-heroes/android-chrome-192x192.png",
         "sizes": "192x192",
         "type": "image/png"
     }, {
-        "src": "/underlords-compare-heroes/android-chrome-512x512.png",
+        "src": "https://carpenterx.github.io/underlords-compare-heroes/android-chrome-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
     }],
