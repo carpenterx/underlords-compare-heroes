@@ -2,7 +2,7 @@ self.addEventListener('install', function(event) {
     event.waitUntil(
       caches.open('cache').then(function(cache) {
         return cache.addAll([
-            "/",
+            "https://carpenterx.github.io/underlords-compare-heroes/index.html",
             
          ]);
       })
