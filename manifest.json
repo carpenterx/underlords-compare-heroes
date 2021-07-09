@@ -2,7 +2,7 @@
     "name": "Underlords - Compare Heroes",
     "short_name": "Underlords Compare",
     "description": "An application for comparing Underlords heroes",
-    "start_url": ".",
+    "start_url": "/underlords-compare-heroes/",
 	"scope": ".",
     "orientation": "any",
     "icons": [{
