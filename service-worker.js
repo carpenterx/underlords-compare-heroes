@@ -2,8 +2,15 @@ self.addEventListener('install', function(event) {
     event.waitUntil(
       caches.open('cache').then(function(cache) {
         return cache.addAll([
-            "/",
-            
+            "/index.html",
+            "/style.css",
+            "/script.js",
+            "/data/underlords.json",
+            "/manifest.json",
+            "/android-chrome-192x192.png",
+            "/android-chrome-512x512.png",
+            "/favicon.ico",
+            "/images/arrow_upward-24px.svg",
          ]);
       })
      );
