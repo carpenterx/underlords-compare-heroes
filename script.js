@@ -1,10 +1,3 @@
-// enable service worker
-if ('serviceWorker' in navigator) {
-
-    // register service worker
-    navigator.serviceWorker.register('https://carpenterx.github.io/underlords-compare-heroes/service-worker.js', {scope: './underlords-compare-heroes/'});
-}
-
 let mirrorFragment = "-mirror";
 let mobileSuffix = "-mobile";
 let properties = ["health", "mana", "dps", "dmg", "bar", "ms", "r", "res", "a"];

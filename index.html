@@ -8,7 +8,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="canonical" href="https://carpenterx.github.io/underlords-compare-heroes/" />
+  	<link rel="manifest" href="/underlords-compare-heroes/manifest.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -212,7 +213,7 @@
                     <p id="res-1-mobile"></p>
                     <p id="a-1-mobile"></p>
                 </div>
-    
+
                 <div class="extra-margin-bot" id="hero-1-data-2-mobile">
                     <p id="health-2-mobile"></p>
                     <p id="mana-2-mobile"></p>
@@ -250,7 +251,7 @@
                     <p id="res-1-mirror-mobile"></p>
                     <p id="a-1-mirror-mobile"></p>
                 </div>
-    
+
                 <div class="extra-margin-bot" id="hero-2-data-2-mobile">
                     <p id="health-2-mirror-mobile"></p>
                     <p id="mana-2-mirror-mobile"></p>
@@ -262,7 +263,7 @@
                     <p id="res-2-mirror-mobile"></p>
                     <p id="a-2-mirror-mobile"></p>
                 </div>
-    
+
                 <div class="extra-margin-bot" id="hero-2-data-3-mobile">
                     <p id="health-3-mirror-mobile"></p>
                     <p id="mana-3-mirror-mobile"></p>
@@ -278,5 +279,16 @@
         </div>
         <div class="fab-icon" id="fab"><img src="images/arrow_upward-24px.svg" alt=""></div>
     </div>
+
+    <script>
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register(
+                '/underlords-compare-heroes/sw.js', {
+                    scope: '/underlords-compare-heroes/'
+                }
+            )
+        }
+    </script>
 </body>
+
 </html>

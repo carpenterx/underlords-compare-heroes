@@ -1,0 +1,19 @@
+{
+    "name": "Underlords - Compare Heroes",
+    "short_name": "Underlords Heroes",
+    "description": "An application for comparing Underlords heroes",
+
+    "scope": "/underlords-compare-heroes/",
+    "start_url": "/underlords-compare-heroes/",
+
+    "background_color": "#ffffff",
+    "theme_color": "teal",
+
+    "display": "standalone",
+
+    "icons": [{
+        "src": "/underlords-compare-heroes/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+}
