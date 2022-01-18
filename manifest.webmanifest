@@ -5,6 +5,7 @@
 
     "scope": "/underlords-compare-heroes/",
     "start_url": "/underlords-compare-heroes/",
+    "id": "/underlords-compare-heroes/"
 
     "background_color": "#ffffff",
     "theme_color": "teal",
